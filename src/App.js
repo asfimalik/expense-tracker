@@ -5,10 +5,13 @@ import { Balance } from "./component/balance.js";
 import { TransctionList } from "./component/TransctionList.js";
 import './App.css';
 import { AddTranction } from "./component/AddTranction";
+import { GlobalContext } from "./global/globalState";
+import { AppReducer } from "./global/AppReducer";
+
 
 function App() {
   return (
-    <div>
+    <GlobalContext.Provider>
        <Header/>
        <div className="container">
        <Balance/>
@@ -17,7 +20,7 @@ function App() {
        <AddTranction />
        </div>
 
-    </div>
+    </GlobalContext.Provider>
   );
 }
 
